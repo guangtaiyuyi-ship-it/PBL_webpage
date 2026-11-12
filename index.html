@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まるごと名桜ナビ</title>
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons (アイコン表示用) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- bodyから bg-white を削除 -->
+<body class="text-slate-900 font-sans antialiased selection:bg-blue-100 selection:text-blue-700">
+
+    <!-- 背景全体を覆う半透明のオーバーレイ (bg-black/40 で暗くして文字を読みやすくする) -->
+    <div class="min-h-screen bg-black/40">
+
+        <!-- 1. ヘッダー -->
+        <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-slate-900">まるごと名桜ナビ</span>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">できること</a>
+                    <a href="#steps" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">使い方</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">よくある質問</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="https://gakusei-shien-app.web.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-600/25 transition-all">
+                        アプリを開く
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. ヒーローセクション -->
+        <!-- bg-gradient-to-b を削除して背景画像が見えるようにする -->
+        <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/80 text-blue-700 text-lg font-bold border border-blue-200/60">
+                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                            学生がつくった、学生のための支援ツール
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.15] tracking-tight">
+                            大学生活で、<br>
+                            <span class="text-blue-200">迷わない。</span><br>
+                            <span class="text-blue-200">忘れない。</span>
+                        </h1>
+
+                        <p class="text-white text-base sm:text-lg leading-relaxed max-w-xl">
+                            時間割も、持ち物も、学内の案内も。<br>
+                            名桜大学生活に必要な情報を、スマホひとつにスマート集約。
+                        </p>
+
+                        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                            <a href="https://gakusei-shien-app.web.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-blue-600/30 transition-all">
+                                アプリを開く
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-white pt-1">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+                            すべての機能が無料・Googleアカウントでログイン可能
+                        </div>
+                    </div>
+
+                    <!-- 右側：スマホシミュレーター表示 (bg-white で背景を白にして読みやすくする) -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="mb-4 flex items-center justify-between bg-white/80 backdrop-blur border border-slate-200 p-3 rounded-2xl shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-200 overflow-hidden flex-shrink-0 relative flex items-center justify-center font-bold text-xs text-blue-900">
+                                    名桜大
+                                </div>
+                                <div>
+                                    <p class="text-lg font-semibold text-slate-800">名桜大学キャンパス</p>
+                                    <p class="text-[15px] text-slate-500">北部やんばるの豊かな自然と学び</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">名護市</span>
+                        </div>
+
+                        <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/80 overflow-hidden max-w-md mx-auto relative z-10">
+                            <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                                    <span class="font-bold text-sm">まるごと名桜ナビ</span>
+                                </div>
+                                <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">S</div>
+                            </div>
+
+                            <div class="p-4 bg-slate-50 border-b border-slate-100">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="font-bold text-slate-800 text-sm">月曜日</span>
+                                    <span class="text-xs text-slate-500">今日時間割</span>
+                                </div>
+                                <div class="grid grid-cols-5 gap-1.5 bg-slate-200/60 p-1 rounded-xl text-center text-xs font-bold" id="hero-day-buttons">
+                                    <button class="hero-day-btn py-1.5 rounded-lg bg-blue-600 text-white shadow-sm" data-day="月">月</button>
+                                    <button class="hero-day-btn py-1.5 rounded-lg text-slate-600 hover:text-slate-900" data-day="火">火</button>
+                                    <button class="hero-day-btn py-1.5 rounded-lg text-slate-600 hover:text-slate-900" data-day="水">水</button>
+                                    <button class="hero-day-btn py-1.5 rounded-lg text-slate-600 hover:text-slate-900" data-day="木">木</button>
+                                    <button class="hero-day-btn py-1.5 rounded-lg text-slate-600 hover:text-slate-900" data-day="金">金</button>
+                                </div>
+                            </div>
+
+                            <div class="p-4 space-y-2.5 max-h-[260px] overflow-y-auto" id="hero-schedule-list"></div>
+
+                            <div class="p-4 bg-slate-50 border-t border-slate-100">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i data-lucide="check-square" class="w-4 h-4 text-blue-600"></i>
+                                    <span class="text-xs font-bold text-slate-700">今日の持ち物・準備</span>
+                                </div>
+                                <p class="text-xs text-slate-600 bg-white p-2.5 rounded-lg border border-slate-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                                    英語の教科書 ・ ノートPC ・ 学生証
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROBLEMS セクション -->
+        <section class="py-16 bg-white border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                        PROBLEMS
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-3">
+                        こんなことに困っていませんか？
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">次の授業どこ？</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            講義棟や実験室の場所がわかりにくく、移動時間に焦ってしまう。
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                            <i data-lucide="check-square" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">講義の持ち物忘れた…</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            教科書やノートPC、配布プリントなど、日によって変わる持ち物の管理が大変.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                            <i data-lucide="building-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">お問い合わせ窓口どこ？</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            教務課、学生課、キャリア支援など、どこに相談すればいいのか探すのに時間がかかる。
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-center text-lg font-semibold text-blue-600 mt-8">
+                    そんな悩みを、「まるごと名桜ナビ」という選択肢が解決します。
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. FEATURES セクション -->
+        <section id="features" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                        FEATURES
+                    </span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-3">
+                        まるごと名桜ナビでできること
+                    </h2>
+                    <p class="text-slate-600 text-lg mt-2">
+                        初めから、直感的に。必要な情報を、イマすぐ。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-b from-slate-50 to-white p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-sm mb-6">01</div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">今日やることがわかる</h3>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                                日ごとの時間割はもちろん、提出物や要チェック事項を即時にチェック可能。
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 text-lg">
+                            <div class="flex items-center gap-2 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> 時間割の即時一覧
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> 教室名と担当教員
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-b from-slate-50 to-white p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-lg mb-6">02</div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">授業の準備ができる</h3>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                                コースごとの必要教材、提出物を手元で一括チェック。忘れ物を防ぎます。
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 text-lg">
+                            <div class="flex items-center gap-2 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> 持ち物リストの作成
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> ワンタップでチェック完了
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-b from-slate-50 to-white p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-lg mb-6">03</div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">困ったときに頼れる</h3>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                                名桜大学内の主要窓口のTEL、場所、受付時間を集約。迷わずアクセスできます。
+                            </p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2 text-lg">
+                            <div class="flex items-center gap-2 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> 教務・学生課の連絡先
+                        </div>
+                            <div class="flex items-center gap-2 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> ワンタップで発信・確認
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. HOW TO USE セクション -->
+        <section id="steps" class="py-20 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                        HOW TO USE
+                    </span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-3">
+                        使い方はかんたん。3ステップ
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-4">1</div>
+                        <h4 class="font-bold text-xl text-slate-900 mb-2">アドレスを開く</h4>
+                        <p class="text-lg text-slate-500">ブラウザで当Webアプリを開きます。特別なアプリのインストールは不要です。</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-4">2</div>
+                        <h4 class="font-bold text-xl text-slate-900 mb-2">Googleでログイン</h4>
+                        <p class="text-lg text-slate-500">大学のアカウント等、Googleアカウントを使って1秒でログイン完了。</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-4">3</div>
+                        <h4 class="font-bold text-xl text-slate-900 mb-2">ホーム画面に追加</h4>
+                        <p class="text-lg text-slate-500">スマホのホーム画面に追加すれば、アプリ感覚でいつでもすぐ使えます。</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12 relative z-10">
+                    <a href="https://gakusei-shien-app.web.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-[1.02]">
+                        アプリを開く
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ セクション -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-200">FAQ</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-3">よくある質問</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow bg-white">
+                        <div class="faq-header p-5 bg-white hover:bg-slate-50 flex items-center justify-between font-bold text-slate-800">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold pointer-events-none">Q</span>
+                                無料で使えますか？
+                            </span>
+                            <span class="faq-icon text-slate-400 text-xl font-normal pointer-events-none">+</span>
+                        </div>
+                        <div class="faq-body hidden p-5 pt-0 bg-slate-50 text-slate-600 text-sm border-t border-slate-100 flex gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold flex-shrink-0">A</span>
+                            <p class="pt-1">はい、すべての機能を完全に無料でご利用いただけます。学内での快適な学生生活をサポートするための有志プロジェクトです。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow bg-white">
+                        <div class="faq-header p-5 bg-white hover:bg-slate-50 flex items-center justify-between font-bold text-slate-800">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold pointer-events-none">Q</span>
+                                大学の公式アプリですか？
+                            </span>
+                            <span class="faq-icon text-slate-400 text-xl font-normal pointer-events-none">+</span>
+                        </div>
+                        <div class="faq-body hidden p-5 pt-0 bg-slate-50 text-slate-600 text-sm border-t border-slate-100 flex gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold flex-shrink-0">A</span>
+                            <p class="pt-1">いいえ。名桜大学の有志学生チームが「学生の困りごとを解決したい」という想いで開発・運営している非公式の支援ツールです。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow bg-white">
+                        <div class="faq-header p-5 bg-white hover:bg-slate-50 flex items-center justify-between font-bold text-slate-800">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold pointer-events-none">Q</span>
+                                個人情報やデータは安全ですか？
+                            </span>
+                            <span class="faq-icon text-slate-400 text-xl font-normal pointer-events-none">+</span>
+                        </div>
+                        <div class="faq-body hidden p-5 pt-0 bg-slate-50 text-slate-600 text-sm border-t border-slate-100 flex gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold flex-shrink-0">A</span>
+                            <p class="pt-1">Google認証等のセキュアなログインを利用しており、個人データは安全に管理されます。また、入力された時間割やメモ等の情報は外部に公開されません。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow bg-white">
+                        <div class="faq-header p-5 bg-white hover:bg-slate-50 flex items-center justify-between font-bold text-slate-800">
+                            <span class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold pointer-events-none">Q</span>
+                                名桜大学以外の学生でも使えますか？
+                            </span>
+                            <span class="faq-icon text-slate-400 text-xl font-normal pointer-events-none">+</span>
+                        </div>
+                        <div class="faq-body hidden p-5 pt-0 bg-slate-50 text-slate-600 text-sm border-t border-slate-100 flex gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold flex-shrink-0">A</span>
+                            <p class="pt-1">現在は名桜大学の校舎配置、窓口連絡先、講義時間割に特化して最適化されています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. フッター -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-2 relative z-10">
+            <p>© 名桜大学 コマンド入力中...(まるごと名桜ナビ)</p>
+            <p class="text-slate-500">本ツールは名桜大学生の利便性向上のために試作開発された支援アプリケーションです。</p>
+        </div>
+    </footer>
+
+    </div> <!-- min-h-screen bg-black/40 の閉じタグ -->
+
+    <!-- JavaScript 読み込み -->
+    <script src="app.js"></script>
+</body>
+</html>

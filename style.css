@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* 背景画像の設定 */
+body {
+    background-image: url('meio-bg.jpg');
+    background-size: 100% auto;        
+    background-position: center 30%;  
+    background-repeat: no-repeat;     
+    background-attachment: fixed;
+    background-color: #1e293b;   
+    min-height: 100vh; 
+}
+/* アコーディオン開閉アニメーション用 */
+.faq-body.hidden {
+    display: none;
+}
+
+/* スクロールバー装飾 (モータル用) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
